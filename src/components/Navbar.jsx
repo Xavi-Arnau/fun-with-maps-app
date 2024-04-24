@@ -4,9 +4,14 @@ import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const links1 = [
+    { name: "Automarkers", to: "/automarkers" },
+    /* { name: "Map1 dsgdfgfdg dfg" },
+    { name: "Map1" },*/
+  ];
+  const links2 = [
     { name: "Experiment with map styles" },
-    { name: "Map1 dsgdfgfdg dfg" },
-    { name: "Map1" },
+    /*{ name: "Map1 dsgdfgfdg dfg" },
+    { name: "Map1" },*/
   ];
   return (
     <div className="w-full bg-black text-white flex flex-row gap-4 justify-between p-4 px-10 min-h-[8vh]">
@@ -20,7 +25,10 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <Dropdown caption={"Some maps"} links={links1} />
+          <Dropdown caption={"Markers"} links={links1} />
+        </li>
+        <li>
+          <Dropdown caption={"Styles"} links={links2} />
         </li>
         <li>
           <NavLink to="/about" className="selected">

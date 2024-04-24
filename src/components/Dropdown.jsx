@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineUp } from "react-icons/ai";
 import { AiOutlineDown } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 
 const Dropdown = ({ caption, links }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,9 @@ const Dropdown = ({ caption, links }) => {
                 className="flex flex-row gap-4 items-center hover:scale-110 text-black"
               >
                 {item.icon ? <img src={item.icon} alt="" /> : null}
-                {item.name}
+                <NavLink to={item.to} className="selected">
+                  {item.name}
+                </NavLink>
               </li>
             ))}
           </ul>
