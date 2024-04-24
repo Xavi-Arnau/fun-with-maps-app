@@ -55,7 +55,7 @@ const Map1 = ({ centerLongitude, centerLatitude, zoom }) => {
     //Clearing the interval
     return () => clearInterval(interval);
   }, []);
-  console.log(locations);
+  console.log(arrayMarkers);
   return (
     <div className="flex flex-row gap-4">
       <div ref={mapContainerRef} className="w-3/4 h-[500px]"></div>
@@ -63,7 +63,7 @@ const Map1 = ({ centerLongitude, centerLatitude, zoom }) => {
         {locations && locations.length
           ? locations.map((item) => (
               <div
-                className="p-4 text-2xl bg-forestGreen rounded-xl text-white"
+                className="p-4 text-2xl bg-forestGreen rounded-xl text-white animate-in fade-in duration-500"
                 key={item.location}
               >
                 {item.location}

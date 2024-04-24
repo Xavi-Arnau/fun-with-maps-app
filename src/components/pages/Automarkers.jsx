@@ -8,10 +8,7 @@ const Automarkers = () => {
         <h1 className="text-3xl font-bold">
           Some markers added to the map in succession
         </h1>
-        <p>
-          For learning purposes we are gonna explore some functionality with
-          MapLibre.js
-        </p>
+        <p>Add some markers in rapid succession to the map.</p>
       </div>
       <div>
         <Map1 centerLongitude={2.176944} centerLatitude={41.3825} zoom={12} />
