@@ -6,6 +6,8 @@ import "maplibre-gl/dist/maplibre-gl.css";
 const MapComponent = ({ centerLongitude, centerLatitude, zoom }) => {
   const mapContainerRef = useRef(null);
   const [map, setMap] = useState(null);
+  const [long, setLong] = useState(null);
+  const [lat, setLat] = useState(null);
 
   useEffect(() => {
     const map = new maplibregl.Map({
@@ -21,10 +23,29 @@ const MapComponent = ({ centerLongitude, centerLatitude, zoom }) => {
       unit: "metric",
     });
     map.addControl(scale);
+    //markers
+    const marker = new maplibregl.Marker({ color: "red", draggable: true })
+      .setLngLat([centerLongitude, centerLatitude])
+      .on("dragend", () => {
+        setLong(marker.getLngLat().lat);
+        setLat(marker.getLngLat().lng);
+      })
+      .addTo(map);
+    setLong(marker.getLngLat().lat);
+    setLat(marker.getLngLat().lng);
     setMap(map);
-  }, []);
+  }, [centerLongitude, centerLatitude, zoom]);
 
-  return <div ref={mapContainerRef} className="w-full h-[500px]" />;
+  return (
+    <>
+      <div ref={mapContainerRef} className="w-full h-[500px] relative">
+        <div className="absolute bg-black opacity-70 text-white bottom-2 left-2 z-20 px-4 py-2 w-1/5 rounded-xl">
+          <p>Longitude: {long}</p>
+          <p>Latitude: {lat}</p>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default MapComponent;

@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const links1 = [
-    { name: "Map1" },
+    { name: "Experiment with map styles" },
     { name: "Map1 dsgdfgfdg dfg" },
     { name: "Map1" },
   ];
