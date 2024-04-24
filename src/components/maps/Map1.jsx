@@ -12,6 +12,7 @@ const Map1 = ({ centerLongitude, centerLatitude, zoom }) => {
     { location: "Sagrada Familia", lng: 2.17433, lat: 41.40369 },
     { location: "La Pedrera", lng: 2.161667, lat: 41.395278 },
     { location: "Plaça Catalunya", lng: 2.170079, lat: 41.387031 },
+    { location: "Santa Maria del Mar", lng: 2.181944, lat: 41.383611 },
   ];
 
   useEffect(() => {
@@ -39,8 +40,15 @@ const Map1 = ({ centerLongitude, centerLatitude, zoom }) => {
         setLocations((locations) => [...locations, marker]);
         new maplibregl.Marker({ color: "red" })
           .setLngLat([marker.lng, marker.lat])
-
-          .addTo(mapRef.current);
+          .setPopup(
+            new maplibregl.Popup().setHTML(
+              "<h1 class='bg-black text-white py-2 px-4 rounded-xl font-bold'>" +
+                marker.location +
+                "</h1>"
+            )
+          ) // add popup
+          .addTo(mapRef.current)
+          .togglePopup();
       }
     }, 1000);
 
