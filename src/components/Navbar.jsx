@@ -1,12 +1,21 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const links1 = [
-    { name: "Automarkers", to: "/automarkers" },
-    /* { name: "Map1 dsgdfgfdg dfg" },
-    { name: "Map1" },*/
+    {
+      name: "Automarkers",
+      to: "/automarkers",
+      icon: <FaMapMarkerAlt color="red" size={20} />,
+    },
+    {
+      name: "Animated markers",
+      to: "/animatedmarkers",
+      icon: <FaMapMarkerAlt color="red" size={20} />,
+    },
+    { name: "Map1" },
   ];
   const links2 = [
     { name: "Experiment with map styles" },
@@ -25,7 +34,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <Dropdown caption={"Markers"} links={links1} />
+          <Dropdown caption={"Exploring markers"} links={links1} />
         </li>
         <li>
           <Dropdown caption={"Styles"} links={links2} />

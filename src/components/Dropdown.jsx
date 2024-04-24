@@ -32,7 +32,7 @@ const Dropdown = ({ caption, links }) => {
                 key={item.name}
                 className="flex flex-row gap-4 items-center hover:scale-110 text-black"
               >
-                {item.icon ? <img src={item.icon} alt="" /> : null}
+                {item.icon ? item.icon : null}
                 <NavLink to={item.to} className="selected">
                   {item.name}
                 </NavLink>
