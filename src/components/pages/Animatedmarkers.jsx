@@ -8,7 +8,7 @@ const Animatedmarkers = () => {
         <h1 className="text-3xl font-bold">
           A marker making circles around a given point
         </h1>
-        <p>Animated a marker to make it do spin around a given coordinates.</p>
+        <p>Animated a marker to make it do circles around given coordinates.</p>
       </div>
       <div>
         <Map2 centerLongitude={2.176944} centerLatitude={41.3825} zoom={12} />
