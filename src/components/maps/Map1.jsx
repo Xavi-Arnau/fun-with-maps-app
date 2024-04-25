@@ -57,9 +57,9 @@ const Map1 = ({ centerLongitude, centerLatitude, zoom }) => {
   }, []);
   console.log(arrayMarkers);
   return (
-    <div className="flex flex-row gap-4">
-      <div ref={mapContainerRef} className="w-3/4 h-[500px]"></div>
-      <div className="w-1/4 flex flex-col gap-4">
+    <div className="flex flex-col md:flex-row gap-4">
+      <div ref={mapContainerRef} className="w-full md:w-3/4 h-[500px]"></div>
+      <div className="md:w-1/4 flex flex-col gap-4">
         {locations && locations.length
           ? locations.map((item) => (
               <div

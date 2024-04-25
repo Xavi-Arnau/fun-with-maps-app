@@ -31,6 +31,7 @@ const Map4 = ({ centerLongitude, centerLatitude, zoom }) => {
   ];
   const [style, setStyle] = useState(styles[0].url);
   useEffect(() => {
+    if (mapRef.current) return; // stops map from intializing more than once
     mapRef.current = new maplibregl.Map({
       container: mapContainerRef.current,
       style: style,
@@ -43,15 +44,20 @@ const Map4 = ({ centerLongitude, centerLatitude, zoom }) => {
       unit: "metric",
     });
     mapRef.current.addControl(scale);
-  }, [centerLongitude, centerLatitude, zoom, style]);
+  }, [centerLongitude, centerLatitude, zoom]);
 
+  const handleChangeStyle = (event) => {
+    setStyle(event.target.value);
+    mapRef.current.setStyle(event.target.value);
+  };
   return (
     <div className="flex flex-col gap-6">
       <div>
         <select
-          onChange={(event) => setStyle(event.target.value)}
-          name=""
-          id=""
+          onChange={handleChangeStyle}
+          name="styles"
+          id="styles"
+          className="border rounded-xl border-black px-6 py-2 bg-gray-50"
         >
           {styles.map((item) => (
             <option value={item.url}>{item.name}</option>

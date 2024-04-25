@@ -3,7 +3,7 @@ import Map2 from "../maps/Map2";
 
 const Animatedmarkers = () => {
   return (
-    <div className="w-8/12 mx-auto bg-white min-h-[92vh] p-8">
+    <div className="w-full md:w-8/12 mx-auto bg-white min-h-[92vh] p-8">
       <div className="flex flex-col gap-4 justify-center items-center py-8">
         <h1 className="text-3xl font-bold">
           A marker making circles around a given point

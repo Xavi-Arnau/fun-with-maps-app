@@ -39,7 +39,7 @@ const MapComponent = ({ centerLongitude, centerLatitude, zoom }) => {
   return (
     <>
       <div ref={mapContainerRef} className="w-full h-[500px] relative">
-        <div className="absolute bg-black opacity-70 text-white bottom-2 left-2 z-20 px-4 py-2 w-1/5 rounded-xl">
+        <div className="absolute bg-black opacity-70 text-white top-2 left-2 md:top-auto md:bottom-2 md:left-2 z-20 px-4 py-2 w-1/2 md:w-1/5 rounded-xl">
           <p>Longitude: {long}</p>
           <p>Latitude: {lat}</p>
         </div>
