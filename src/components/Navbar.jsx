@@ -60,7 +60,7 @@ const Navbar = () => {
           </NavLink>
         </li>
       </ul>
-      <div onClick={handleNav} className="block md:hidden z-30">
+      <div onClick={handleNav} className="block md:hidden z-50">
         {nav ? (
           <AiOutlineClose color="black" size={30} />
         ) : (
@@ -70,8 +70,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden w-2/3 bg-white z-20 fixed h-full top-[0px] right-[0px] ease-in duration-500"
-            : "md:hidden w-2/3 bg-white z-20 fixed h-full top-[0px] right-[-100%] ease-in duration-500"
+            ? "md:hidden w-2/3 bg-white z-40 fixed h-full top-[0px] right-[0px] ease-in duration-500"
+            : "md:hidden w-2/3 bg-white z-40 fixed h-full top-[0px] right-[-100%] ease-in duration-500"
         }
       >
         <div className="p-10 flex flex-col gap-6">
@@ -103,8 +103,8 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? "md:hidden w-full inset-0 bg-black bg-opacity-70 z-10 fixed h-full ease-in-out duration-500"
-            : "md:hidden w-full inset-0 bg-black bg-opacity-0 z-10 fixed h-full ease-in-out duration-500"
+            ? "md:hidden w-full inset-0 bg-black  z-30 fixed h-full opacity-70 animate-openmenu"
+            : "md:hidden w-full inset-0 bg-black  z-30 fixed h-full opacity-0 hidden animate-closemenu"
         }
       ></div>
     </div>
