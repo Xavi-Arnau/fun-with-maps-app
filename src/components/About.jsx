@@ -7,8 +7,14 @@ const About = () => {
         <h1 className="text-3xl font-bold">About</h1>
         <p>
           Welcome to Fun with Maps. This app was developed for learning purposes
-          using React.js, Tailwind and MapLibre.js. You can find the repository
-          here.
+          using React.js, Tailwind and MapLibre.js. You can find the{" "}
+          <a
+            className="font-bold"
+            href="https://github.com/Xavi-Arnau/fun-with-maps-app"
+          >
+            repository here
+          </a>
+          .
         </p>
       </div>
     </div>

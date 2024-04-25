@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
-import { FaMapMarkerAlt, FaPlane } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPlane, FaMap } from "react-icons/fa";
 
 const Navbar = () => {
   const links1 = [
@@ -16,13 +16,17 @@ const Navbar = () => {
       icon: <FaMapMarkerAlt color="red" size={20} />,
     },
     {
-      name: "Animated line",
+      name: "Animated line Indiana Jones style",
       to: "/animatedline",
       icon: <FaPlane color="red" size={20} />,
     },
   ];
   const links2 = [
-    { name: "Experiment with map styles" },
+    {
+      name: "Experiment with map styles",
+      to: "/mapstyles",
+      icon: <FaMap size={20} />,
+    },
     /*{ name: "Map1 dsgdfgfdg dfg" },
     { name: "Map1" },*/
   ];
