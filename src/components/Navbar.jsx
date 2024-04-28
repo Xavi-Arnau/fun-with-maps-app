@@ -7,6 +7,7 @@ import {
   FaMap,
   FaCubes,
   FaMountain,
+  FaFilter,
 } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
@@ -55,6 +56,13 @@ const Navbar = () => {
       icon: <FaMountain size={20} />,
     },
   ];
+  const links3 = [
+    {
+      name: "Experiment with map filters",
+      to: "/filters",
+      icon: <FaFilter size={20} />,
+    },
+  ];
   return (
     <div className="w-full bg-black text-white flex flex-row gap-4 justify-between p-4 px-10 min-h-[8vh]">
       <div>
@@ -73,6 +81,9 @@ const Navbar = () => {
         </li>
         <li>
           <Dropdown caption={"Styles"} links={links2} />
+        </li>
+        <li>
+          <Dropdown caption={"Filters"} links={links3} />
         </li>
         <li>
           <NavLink to="/about" className="selected">
@@ -111,6 +122,18 @@ const Navbar = () => {
             <li>Styles</li>
             <ul className="flex flex-col gap-4">
               {links2.map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.to}
+                  className="flex flex-row p-2"
+                >
+                  {item.icon} {item.name}
+                </NavLink>
+              ))}
+            </ul>
+            <li>Filters</li>
+            <ul className="flex flex-col gap-4">
+              {links3.map((item) => (
                 <NavLink
                   key={item.name}
                   to={item.to}

@@ -60,7 +60,9 @@ const Map4 = ({ centerLongitude, centerLatitude, zoom }) => {
           className="border rounded-xl border-black px-6 py-2 bg-gray-50"
         >
           {styles.map((item) => (
-            <option value={item.url}>{item.name}</option>
+            <option key={item.name} value={item.url}>
+              {item.name}
+            </option>
           ))}
         </select>
       </div>

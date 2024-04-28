@@ -10,6 +10,7 @@ import Animatedline from "./components/pages/Animatedline";
 import MapStyles from "./components/pages/MapStyles";
 import Buildings3d from "./components/pages/Buildings3d";
 import Terrain3d from "./components/pages/Terrain3d";
+import Filters from "./components/pages/Filters";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/mapstyles" element={<MapStyles />} />
           <Route path="/buildings3d" element={<Buildings3d />} />
           <Route path="/terrain3d" element={<Terrain3d />} />
+          <Route path="/filters" element={<Filters />} />
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
