@@ -8,6 +8,8 @@ import Automarkers from "./components/pages/Automarkers";
 import Animatedmarkers from "./components/pages/Animatedmarkers";
 import Animatedline from "./components/pages/Animatedline";
 import MapStyles from "./components/pages/MapStyles";
+import Buildings3d from "./components/pages/Buildings3d";
+import Terrain3d from "./components/pages/Terrain3d";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/animatedmarkers" element={<Animatedmarkers />} />
           <Route path="/animatedline" element={<Animatedline />} />
           <Route path="/mapstyles" element={<MapStyles />} />
+          <Route path="/buildings3d" element={<Buildings3d />} />
+          <Route path="/terrain3d" element={<Terrain3d />} />
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />

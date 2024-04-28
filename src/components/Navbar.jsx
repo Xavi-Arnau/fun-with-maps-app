@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Dropdown from "./Dropdown";
-import { FaMapMarkerAlt, FaPlane, FaMap } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPlane,
+  FaMap,
+  FaCubes,
+  FaMountain,
+} from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
+  };
+  const menuRef = useRef();
+  const closeMenu = (e) => {
+    if (menuRef.current === e.target) {
+      handleNav();
+    }
   };
   const links1 = [
     {
@@ -32,8 +44,16 @@ const Navbar = () => {
       to: "/mapstyles",
       icon: <FaMap size={20} />,
     },
-    /*{ name: "Map1 dsgdfgfdg dfg" },
-    { name: "Map1" },*/
+    {
+      name: "Buildings in 3D",
+      to: "/buildings3d",
+      icon: <FaCubes size={20} />,
+    },
+    {
+      name: "Terrain in 3D",
+      to: "/terrain3d",
+      icon: <FaMountain size={20} />,
+    },
   ];
   return (
     <div className="w-full bg-black text-white flex flex-row gap-4 justify-between p-4 px-10 min-h-[8vh]">
@@ -79,7 +99,11 @@ const Navbar = () => {
             <li>Exploring markers</li>
             <ul className="flex flex-col gap-4">
               {links1.map((item) => (
-                <NavLink to={item.to} className="flex flex-row">
+                <NavLink
+                  key={item.name}
+                  to={item.to}
+                  className="flex flex-row p-2"
+                >
                   {item.icon} {item.name}
                 </NavLink>
               ))}
@@ -87,7 +111,11 @@ const Navbar = () => {
             <li>Styles</li>
             <ul className="flex flex-col gap-4">
               {links2.map((item) => (
-                <NavLink to={item.to} className="flex flex-row">
+                <NavLink
+                  key={item.name}
+                  to={item.to}
+                  className="flex flex-row p-2"
+                >
                   {item.icon} {item.name}
                 </NavLink>
               ))}
@@ -101,6 +129,8 @@ const Navbar = () => {
         </div>
       </div>
       <div
+        ref={menuRef}
+        onClick={closeMenu}
         className={
           nav
             ? "md:hidden w-full inset-0 bg-black  z-30 fixed h-full opacity-70 animate-openmenu"
