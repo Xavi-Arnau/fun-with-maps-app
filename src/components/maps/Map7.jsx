@@ -34,7 +34,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           type: "Point",
           coordinates: [2.176944, 41.3825],
         },
-        properties: { name: "Barcelona", beach: true, language: "catalan" },
+        properties: {
+          name: "Barcelona",
+          beach: true,
+          language: "catalan",
+          olympic: true,
+        },
       },
       {
         type: "Feature",
@@ -42,7 +47,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           type: "Point",
           coordinates: [-3.703333, 40.416944],
         },
-        properties: { name: "Madrid", beach: false, language: "spanish" },
+        properties: {
+          name: "Madrid",
+          beach: false,
+          language: "spanish",
+          olympic: false,
+        },
       },
       {
         type: "Feature",
@@ -50,7 +60,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           type: "Point",
           coordinates: [2.352222, 48.856667],
         },
-        properties: { name: "Paris", beach: false, language: "french" },
+        properties: {
+          name: "Paris",
+          beach: false,
+          language: "french",
+          olympic: true,
+        },
       },
       {
         type: "Feature",
@@ -58,7 +73,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           type: "Point",
           coordinates: [13.383333, 52.516667],
         },
-        properties: { name: "Berlin", beach: false, language: "german" },
+        properties: {
+          name: "Berlin",
+          beach: false,
+          language: "german",
+          olympic: true,
+        },
       },
       {
         type: "Feature",
@@ -66,7 +86,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           type: "Point",
           coordinates: [19.937222, 50.061389],
         },
-        properties: { name: "Krakow", beach: false, language: "polish" },
+        properties: {
+          name: "Krakow",
+          beach: false,
+          language: "polish",
+          olympic: false,
+        },
       },
     ],
   };
@@ -101,6 +126,10 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
     mapRef.current.setFilter("cities-layer", ["==", "language", "french"]);
     setFilter("french");
   };
+  const handleFilterOlympic = () => {
+    mapRef.current.setFilter("cities-layer", ["==", "olympic", true]);
+    setFilter("olympic");
+  };
   const clearFilter = () => {
     mapRef.current.setFilter("cities-layer", null);
     setFilter("");
@@ -117,6 +146,12 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
         </div>
         <div className="absolute text-white top-2 left-2 md:top-auto md:bottom-2 md:left-2 z-20 px-4 py-2 w-1/2 md:w-1/5 rounded-xl flex flex-col gap-4">
           <button
+            onClick={handleFilterOlympic}
+            className="bg-green-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
+          >
+            Olympic cities
+          </button>
+          <button
             onClick={handleFilterBeach}
             className="bg-green-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
           >
@@ -130,7 +165,7 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
           </button>
           <button
             onClick={clearFilter}
-            className="bg-red-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
+            className="bg-red-600 rounded-lg text-white py-2 px-6 active:bg-red-400 text-base font-bold"
           >
             Clear filter
           </button>
