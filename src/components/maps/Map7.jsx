@@ -141,33 +141,33 @@ const Map7 = ({ centerLongitude, centerLatitude, zoom }) => {
         ref={mapContainerRef}
         className="w-full h-[500px] relative flex flex-row justify-center"
       >
-        <div className="absolute bg-black opacity-70 text-white  z-20 px-4 py-2 w-1/2 md:w-1/5 rounded-xl">
+        <div className="absolute bg-black opacity-70 text-white  z-20 px-4 py-2 w-1/2 md:w-1/6 rounded-xl">
           Filtering by: {filter}
         </div>
-        <div className="absolute text-white top-2 left-2 md:top-auto md:bottom-2 md:left-2 z-20 px-4 py-2 w-1/2 md:w-1/5 rounded-xl flex flex-col gap-4">
+        <div className="absolute text-white  :top-auto bottom-2 left-2 z-20 px-4 py-2 w-full flex-wrap rounded-xl flex flex-row gap-4">
           <button
             onClick={handleFilterOlympic}
             className="bg-green-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
           >
-            Olympic cities
+            Olympic
           </button>
           <button
             onClick={handleFilterBeach}
             className="bg-green-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
           >
-            Cities with beach
+            Beach
           </button>
           <button
             onClick={handleFilterFrench}
             className="bg-green-600 rounded-lg text-white py-2 px-6 active:bg-green-400 text-base font-bold"
           >
-            Cities that speak french
+            French
           </button>
           <button
             onClick={clearFilter}
             className="bg-red-600 rounded-lg text-white py-2 px-6 active:bg-red-400 text-base font-bold"
           >
-            Clear filter
+            Clear
           </button>
         </div>
       </div>
