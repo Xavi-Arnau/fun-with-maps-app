@@ -154,6 +154,18 @@ const Navbar = () => {
                 </NavLink>
               ))}
             </ul>
+            <li>Other stuff</li>
+            <ul className="flex flex-col gap-4">
+              {links4.map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.to}
+                  className="flex flex-row p-2"
+                >
+                  {item.icon} {item.name}
+                </NavLink>
+              ))}
+            </ul>
             <li>
               <NavLink to="/about" className="selected">
                 About
