@@ -8,6 +8,7 @@ import {
   FaCubes,
   FaMountain,
   FaFilter,
+  FaRegImages,
 } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
@@ -63,6 +64,13 @@ const Navbar = () => {
       icon: <FaFilter size={20} />,
     },
   ];
+  const links4 = [
+    {
+      name: "Maps in slides",
+      to: "/slides",
+      icon: <FaRegImages size={20} />,
+    },
+  ];
   return (
     <div className="w-full bg-black text-white flex flex-row gap-4 justify-between p-4 px-10 min-h-[8vh]">
       <div>
@@ -84,6 +92,9 @@ const Navbar = () => {
         </li>
         <li>
           <Dropdown caption={"Filters"} links={links3} />
+        </li>
+        <li>
+          <Dropdown caption={"Other stuff"} links={links4} />
         </li>
         <li>
           <NavLink to="/about" className="selected">

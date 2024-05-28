@@ -11,6 +11,7 @@ import MapStyles from "./components/pages/MapStyles";
 import Buildings3d from "./components/pages/Buildings3d";
 import Terrain3d from "./components/pages/Terrain3d";
 import Filters from "./components/pages/Filters";
+import Slides from "./components/pages/Slides";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/buildings3d" element={<Buildings3d />} />
           <Route path="/terrain3d" element={<Terrain3d />} />
           <Route path="/filters" element={<Filters />} />
+          <Route path="/slides" element={<Slides />} />
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
